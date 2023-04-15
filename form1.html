@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    form {
+        border: 6px solid orangered;
+        margin-top: 0px;
+        margin-bottom: 100px;
+        margin-right: 200px;
+        margin-left: 300px;
+        padding: 5px 2px 8px 6px;
+        background-color: rgb(27, 177, 214);
+        opacity: 92%;
+    }
+
+    #date,
+    #time {
+        width: 395px;
+        height: 30px;
+    }
+
+    #name,
+    #email,
+    #number {
+        width: 800px;
+        height: 30px;
+    }
+
+    body {
+        background-image: url("my.jpg");
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"] {
+        width: 800px;
+        height: 30px;
+    }
+
+    
+
+    #sub {
+        background-color: orange;
+        width: 800px;
+        height: 30px;
+    }
+</style>
+
+<body>
+    <form id="form">
+        <h2 style="text-align: center;font-weight: bold; color: red;">Book A Call</h2>
+        <h4 style="text-align: center;font-weight: bold;">Book a call slot and our representative will call you within 1
+            hr of selected times</h4>
+        <div class="abc">
+            <div>
+                <label for="name">Name</label>
+                <input type="text" name="my Name" id="name"><br><br>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="text" name="my Email" id="email"><br><br>
+            </div>
+            <div>
+                <label for="phone">Phone</label>
+                <input type="number" name="my Number" id="number"><br><br>
+            </div>
+        </div>
+        <div>
+            Time for call: <br>
+            <label for="date"></label>
+            <input type="date" name="my Date" id="date">
+            <label for="time"></label>
+            <input type="time" name="my Time" id="time"><br><br>
+            <button type="submit" id="sub"><strong> GET A CALL </strong></button>
+        </div>
+        <script>
+            let form = document.getElementById("form");
+            form.addEventListener("submit", onSub) 
+           function onSub(event){
+            event.preventDefault();
+            let username=document.getElementById('name').value;
+            let email=document.getElementById('email').value;
+            let number=document.getElementById('number').value;
+            let date=document.getElementById('date').value;
+            let time=document.getElementById('time').value;
+            let info = `Name- ${username}, E-mail-${email}, Phone Number-${number},
+            for appointment on ${date} at ${time}`
+            console.log(info);
+           }
+        </script>
+</body>
+</form>
+
+</html>
